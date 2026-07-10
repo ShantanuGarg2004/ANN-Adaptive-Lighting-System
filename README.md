@@ -1,10 +1,10 @@
-# 💡 Smart Adaptive Lighting System (ANN-Powered)
+# Smart Adaptive Lighting System (ANN-Powered)
 
 An IoT-based smart lighting system that uses an **Artificial Neural Network (ANN)** to autonomously predict and control LED brightness based on ambient light, time of day, and seasonal context — with a real-time web dashboard for monitoring and manual override.
 
 ---
 
-## 📖 Overview
+## Overview
 
 This project combines an **ESP32 microcontroller**, ambient light and motion sensors, and a **TensorFlow Lite ANN model** served through a **Flask + Socket.IO backend** to deliver intelligent, energy-aware lighting control.
 
@@ -14,20 +14,20 @@ It also includes an energy comparison model that estimates power/energy savings 
 
 ---
 
-## ✨ Key Features
+## Key Features
 
-- 🧠 **ANN-based brightness prediction** — TensorFlow Lite model inferring optimal brightness from lux, hour, weather, and season features.
-- 📡 **ESP32 + BH1750 + PIR** — real ambient light sensing and motion-based auto shut-off with a countdown grace period.
-- 🖥️ **OLED live status display** on the device (lux, brightness, mode, motion, countdown).
-- 🌐 **Real-time web dashboard** using Flask-SocketIO and Chart.js for live brightness, power, and energy visualization.
-- 🎚️ **Manual override mode** — slider-based brightness control and power toggle from the dashboard.
-- 📊 **Power & energy modeling** — voltage/current-based power estimation and cumulative energy tracking (Smart vs. Fixed LED comparison).
-- 🗂️ **CSV data logging** during manual mode sessions for later analysis.
-- 🔁 **Automatic mode synchronization** between the ESP32 and server (auto/manual, brightness, power state).
+- **ANN-based brightness prediction** — TensorFlow Lite model inferring optimal brightness from lux, hour, weather, and season features.
+- **ESP32 + BH1750 + PIR** — real ambient light sensing and motion-based auto shut-off with a countdown grace period.
+- **OLED live status display** on the device (lux, brightness, mode, motion, countdown).
+- **Real-time web dashboard** using Flask-SocketIO and Chart.js for live brightness, power, and energy visualization.
+- **Manual override mode** — slider-based brightness control and power toggle from the dashboard.
+- **Power & energy modeling** — voltage/current-based power estimation and cumulative energy tracking (Smart vs. Fixed LED comparison).
+- **CSV data logging** during manual mode sessions for later analysis.
+- **Automatic mode synchronization** between the ESP32 and server (auto/manual, brightness, power state).
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 
 ```mermaid
 flowchart LR
@@ -78,7 +78,7 @@ flowchart LR
 
 ---
 
-## 🔄 Sequence Diagrams
+## Sequence Diagrams
 
 ### 1. Auto Mode — ANN-Driven Brightness Prediction
 
@@ -136,7 +136,7 @@ sequenceDiagram
 
 ---
 
-## 🧰 Tech Stack
+## Tech Stack
 
 | Layer | Technology |
 |---|---|
@@ -151,7 +151,7 @@ sequenceDiagram
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 ann-adaptive-lighting-system/
@@ -170,7 +170,7 @@ ann-adaptive-lighting-system/
 
 ---
 
-## ⚙️ ANN Model Details
+## ANN Model Details
 
 The `/predict` endpoint expects `lux` and `hour`, and derives additional contextual features before inference:
 
@@ -188,7 +188,7 @@ The model outputs a raw brightness value that is clipped to **0–90%**, with a 
 
 ---
 
-## 🔌 API Reference
+## API Reference
 
 | Endpoint | Method | Description |
 |---|---|---|
@@ -206,7 +206,7 @@ The model outputs a raw brightness value that is clipped to **0–90%**, with a 
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - Python 3.9+
@@ -246,13 +246,13 @@ Open `http://<server-ip>:5000` in a browser to view live sensor data, brightness
 
 ---
 
-## 📊 Power & Energy Modeling
+## Power & Energy Modeling
 
 The dashboard estimates real-world power consumption using a brightness-to-voltage lookup table and a fixed maximum LED current, then integrates this over time to compute cumulative energy usage (Wh). This is directly compared against a constant-power fixed LED fixture to visualize energy savings achieved through adaptive dimming and motion-based shutoff.
 
 ---
 
-## 🗺️ Roadmap
+## Roadmap
 
 - [ ] On-device (edge) ANN inference using the generated `lighting_model.h`/`.cpp`, removing the network dependency for predictions
 - [ ] Persistent database storage (replacing/augmenting CSV logging)
@@ -262,7 +262,7 @@ The dashboard estimates real-world power consumption using a brightness-to-volta
 
 ---
 
-## 🙋 Author
+## Author
 
 **Shantanu Garg**
 B.Tech CSE-AI, Graphic Era (Deemed to be University), Dehradun
